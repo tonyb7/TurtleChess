@@ -15,9 +15,9 @@ rm -rf env
 python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
-deactivate
+# deactivate
 
-mv lichess-bot/engines/Winter-prod lichess-bot/engines/Winter-prod-old
+# mv lichess-bot/engines/Winter-prod lichess-bot/engines/Winter-prod-old
 ./push_to_prod.sh
 cd ..
 
