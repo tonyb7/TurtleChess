@@ -144,8 +144,9 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
 
     print("Trying to open ", color_file_path)
     color_file = open(color_file_path, 'w+')
-    color_file.write(str(1 if game.is_white else 0))
-    print(f"Wrote {str(1 if game.is_white else 0)} to it")
+    is_white_num_str = str(1 if game.is_white else 0)
+    color_file.write(is_white_num_str)
+    print(f"Wrote {is_white_num_str} to it")
     color_file.close()
 
     board = setup_board(game)
