@@ -34,11 +34,20 @@
 
 #include "net_evaluation.h"
 
+#include <fstream>
 #include "utility.h"
 
 int BOT_COLOR = -1;
 
 int main() {
+
+  std::ifstream color_read("engines/engine_color.txt");
+  color_read >> BOT_COLOR;
+  color_read.close();
+
+  std::ofstream log_color("engines/color.log", std::ios_base::app);
+  log_color << "main read color " << (BOT_COLOR ? "white" : "black") << std::endl;
+  log_color.close();
     
   debug::EnterFunction(debug::kMain, "Main", "");
   table::SetTableSize(32);

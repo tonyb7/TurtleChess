@@ -135,9 +135,6 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
     #Initial response of stream will be the full game info. Store it
     initial_state = json.loads(next(lines).decode('utf-8'))
     game = model.Game(initial_state, user_profile["username"], li.baseUrl, config.get("abort_time", 20))
-    board = setup_board(game)
-    engine = engine_factory(board)
-    conversation = Conversation(game, engine, li, __version__, challenge_queue)
 
     color_file_path = os.path.join(os.getcwd(), 'engines', 'engine_color.txt')
     print("Engine color file path: ", color_file_path)
@@ -150,6 +147,10 @@ def play_game(li, game_id, control_queue, engine_factory, user_profile, config, 
     color_file.write(str(1 if game.is_white else 0))
     print(f"Wrote {str(1 if game.is_white else 0)} to it")
     color_file.close()
+
+    board = setup_board(game)
+    engine = engine_factory(board)
+    conversation = Conversation(game, engine, li, __version__, challenge_queue)
 
     logger.info("+++ {}".format(game))
 

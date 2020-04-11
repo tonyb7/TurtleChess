@@ -41,7 +41,8 @@
 #include <iostream>
 #include <thread>
 
-//#include <fstream>
+#include <fstream>
+#include "utility.h"
 
 namespace {
 
@@ -126,7 +127,7 @@ void Go(Board *board, Timer timer) {
   }
   std::cout << "bestmove " << parse::MoveToString(move) << std::endl;
   
-//  std::ofstream movelog("/Users/tonyb/Desktop/chess/TurtleChess/lichess-bot/engines/moves.log", std::ios_base::app);
+//  std::ofstream movelog("engines/moves.log", std::ios_base::app);
 //  movelog << "bestmove " << parse::MoveToString(move) << std::endl;
 //  movelog.close();
 }

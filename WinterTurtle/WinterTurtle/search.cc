@@ -1365,12 +1365,6 @@ Move RootSearch(Board &board, Depth depth, Milliseconds duration = Milliseconds(
   rsearch_mode = Mode;
   std::vector<Move> moves = board.GetMoves<kNonQuiescent>();
   
-  if (BOT_COLOR == -1) {
-	std::ifstream engine_color_file("engine_color.txt");
-	engine_color_file >> BOT_COLOR;
-	engine_color_file.close();
-  }
-  
   // Filter out non turtle moves
 //  std::cout << "Filtering moves\n";
 //  std::cout << "moves size: " << moves.size() << '\n';
