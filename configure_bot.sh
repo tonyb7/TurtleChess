@@ -10,7 +10,8 @@ echo "Does config.yml's engine field say Winter-prod?"
 cd Winter
 ./build.sh
 
-cd ../lichess-bot
+cd ..
+#cd ../lichess-bot
 rm -rf env
 python3 -m venv env
 source env/bin/activate
@@ -19,7 +20,7 @@ pip install -r requirements.txt
 
 # mv lichess-bot/engines/Winter-prod lichess-bot/engines/Winter-prod-old
 ./push_to_prod.sh
-cd ..
+#cd ..
 
 echo "Engine successfully configured on your machine!"
 echo "To run bot, go to lichess-bot folder, activate a python virtual environment, and run lichess-bot.py!"

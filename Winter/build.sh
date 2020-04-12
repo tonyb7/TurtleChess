@@ -9,5 +9,5 @@ cp -r ../WinterTurtle/WinterTurtle src
 make clean 
 make
 
-cp Winter ../lichess-bot/engines/Winter-beta
-
+# cp Winter ../lichess-bot/engines/Winter-beta
+cp Winter ../engines/Winter-beta

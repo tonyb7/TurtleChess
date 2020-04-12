@@ -1,0 +1,2 @@
+BOT_COLOR before: -1
+BOT_COLOR after: 0
