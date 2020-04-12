@@ -1,1 +1,1 @@
-web: python lichess-bot.py 
+web: ./run_heroku.sh 
